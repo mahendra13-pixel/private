@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+menu
+{% endblock title %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/menu.css' %}">
+
+{% endblock css %}
+{% block contain %}
+<div class="ho"><section class="menu-page" >
+
+    <!-- Header Section -->
+    <nav class="top-nav">
+        <a href="#food-menu">Menu</a>
+        <a href="#food-menu">
+            <img src="https://i.postimg.cc/fTzFMXKj/arrow-down.png" alt="Cardápio">
+        </a>
+    </nav>
+
+    <section id="home" class="home"></section>
+
+    <div class="menu-wrapper">
+        <div class="container" id="food-menu">
+
+            <h1 class="h1">MENU</h1>
+ {% for j in category %}
+            <section class="content-menu">
+
+                <aside class="aside-float">
+                    <nav class="nav-side">
+                        
+                          
+                        <a href="#{{j.title}}">{{j.title}}
+                            <img src="https://i.postimg.cc/65MPq3bs/cutlery.png" alt="Pratos">
+                        </a>
+                                               
+
+                    </nav>
+                </aside>
+
+   
+ 
+                <section class="content-side">
+
+                    <section class="items">
+                        <article class="plates" id="plates">
+                            <div class="header1" id="{{j.title}}" style="background-image: url({{j.image.url}});">
+                              
+                                <h1 >{{j.title}}</h1>
+                            </div>
+                            <ul class="menu-items">
+                                {% for  i in j.items.all  %}
+                                  
+                                
+                                <li class="item" ><span class="food">{{i.name}}</span><span class="price">R$ {{i.price}}</span></li>
+                              {%empty%}
+                              <h6 class="alert alert-danger align-items-center mt-3">Sorry Nothing in {{j.title}} item</h6>
+                                {% endfor %}
+                            </ul>
+                        </article>
+                    </section>
+
+
+                </section>
+               
+            </section>
+ {% endfor %}
+        </div>
+    </div>
+
+</section></div>
+
+
+{% endblock contain %}

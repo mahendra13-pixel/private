@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}
+  Terms
+{% endblock title %}
+{% block contain %}
+  <style>
+.legal-section{
+    background:#1a1a1a;
+    color:#ced4da;
+    padding:40px 20px;
+    margin-top: 10vmin;
+}
+
+.legal-box{
+    max-width:900px;
+    margin:auto;
+    border:1px solid #2a2a2a;
+    border-radius:8px;
+    padding:30px;
+}
+
+.legal-title span{
+    color:#d16d37;
+    font-weight:bold;
+}
+
+.legal-box h3{
+    margin-top:25px;
+}
+
+.legal-box p{
+    line-height:1.7;
+}
+
+.legal-box a{
+    color:#ced4da;
+    text-decoration:none;
+}
+
+.legal-box a:hover{
+    color:#db5a57;
+}
+</style>
+
+<section class="legal-section">
+    <div class="legal-box">
+        <h1 class="legal-title"><span>M</span>oMo Restaurant – Terms & Conditions</h1>
+
+        <p>By using our services, you agree to the following terms.</p>
+
+        <h3>1. Orders</h3>
+        <p>All orders depend on availability. We may cancel orders if required.</p>
+
+        <h3>2. Pricing</h3>
+        <p>Prices can change without prior notice.</p>
+
+        <h3>3. Food Quality</h3>
+        <p>We maintain hygiene and quality standards.</p>
+
+        <h3>4. Cancellation</h3>
+        <p>Prepared orders cannot be cancelled.</p>
+
+        <h3>5. Contact</h3>
+        <p>Reach out to us for any support.</p>
+    </div>
+</section>
+
+{% endblock contain %}
